@@ -528,7 +528,7 @@ A gestão de estoque do Restaurante 🍝 🦐 Chapa Quente 🍛 🥘 também é 
 
 Assim como no requisito anterior, o time que trabalhou antes de você no projeto já iniciou a implementação da classe e cabe a você finalizar esta implementação. Você deve implementar dois métodos para a classe: `check_recipe_availability` e `consume_recipe`.
 
-O primeiro dos métodos (`check_recipe_availability`) deve checar se a receita passada como parâmetro está ou não disponível para consumo, para isso, deve retornar `True` caso o prato esteja disponível para consumo e `False` caso contrário.
+O primeiro dos métodos (`check_recipe_availability`) deve checar se a receita passada como parâmetro está ou não disponível para consumo, para isso, deve retornar `False` caso um ingrediente da receita não exista no estoque ou caso não exista quantidade suficiente destes ingredientes em estoque e `True`  caso o prato esteja disponível para consumo.
 
 O segundo método (`consume_recipe`) também recebe uma receita como parâmetro, mas deve subtrair a quantidade de ingredientes usados na receita do total disponível em estoque. Vale lembrar que a subtração só deve acontecer caso a receita esteja disponível para consumo, caso contrário, deverá ser levantada uma exceção `ValueError`.
 
@@ -586,3 +586,17 @@ Ao longo de sua implementação você deve garantir que:
 
 </details>
 <br>
+
+<details>
+  <summary>
+    <b>👀 De olho na dica - Como rodar a aplicação?</b>
+  </summary>
+
+Para ver a aplicação rodando com as funcionalidades que você implementou use o comando a seguir
+```
+uvicorn app:app
+```
+    
+Acesse a rota `/docs` para ver a [documentação](http://127.0.0.1:8000/docs) gerada pelo FastAPI
+
+</details>
